@@ -3,7 +3,7 @@
 #include <assert.h>
 #include "../src_h/EquationSolutionFunctions.h"
 #include "../src_h/UserInterface.h"
-//#include "MyASSerts.h"
+#include "../src_h/MyAsserts.h"
 
 int UserI()
 {
@@ -28,9 +28,9 @@ int UserI()
 
 void NumbersScanner(double* a,double* b,double* c)
 {
-    //MyASSert (a != NULL);
-    //MyASSert (a != NULL);
-    //MyASSert (a != NULL);
+    MyASSert (a != NULL);
+    MyASSert (a != NULL);
+    MyASSert (a != NULL);
     while (true)
     {
         int CountOfRead = scanf("%lg %lg %lg", a, b, c);

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include <math.h>
-//#include "MyASSerts.h"
+#include "../src_h/MyAsserts.h"
 #include "../src_h/EquationSolutionFunctions.h"
 
 bool is_zero(double a)
@@ -14,11 +14,11 @@ bool is_zero(double a)
 
 enum CountOfSolves SolveQuadraticEquation(equation a)
 {
-    //MyASSert (IsCertain(a));
-    //MyASSert (IsCertain(b));
-    //MyASSert (IsCertain(c));
-    //assert (x1 != NULL);
-    //assert (x2 != NULL);
+    MyASSert (IsCertain(a.a));
+    MyASSert (IsCertain(a.b));
+    MyASSert (IsCertain(a.c));
+    MyASSert (a.x1 != NULL);
+    MyASSert (a.x2 != NULL);
     if(is_zero(a.a))
         return linear_equation(a);
     else
