@@ -53,6 +53,7 @@ enum quadratic_equation (struct a)
         {
             *x1 = (-b/2a) + sqrt(d);
             *x2 = (-b/2a) - sqrt(d);
+            return Two;
         }
     }
 }
