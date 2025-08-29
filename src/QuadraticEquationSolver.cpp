@@ -14,7 +14,7 @@ int main(int argc, char*argv[])
         if(strncmp(argv[1], "--test", 6) == 0)
             SolverT();
         else if(strncmp(argv[1], "--user", 6) == 0)
-            UserI();
+            while(UserI());
         else if(strncmp(argv[1], "--help", 6) == 0)
             printf("Usage: quadratka.exe [options] file...\n Options:\n --user                   Run user mode\n --test                   Run test mode\n --help                   Display this information\n");
         else if(strncmp(argv[1], "--prank", 7) == 0)
