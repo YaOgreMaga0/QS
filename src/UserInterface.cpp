@@ -5,10 +5,6 @@
 #include "../src_h/UserInterface.h"
 //#include "MyASSerts.h"
 
-void NumbersScanner(double* a, double* b, double* c);
-void OutputAnswers(enum CountOfSolves NumberOfRoots, double x1, double x2);
-int ClearStdin();
-
 void UserI()
 {
     double x1 = 0;
