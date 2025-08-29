@@ -39,26 +39,26 @@ void NumbersScanner(double* a,double* b,double* c)
         {
              break;
         }
-        printf("\x1b[31m Invalid input format, please enter the numbers again \n \x1b[30m");
+        printf(RED" Invalid input format, please enter the numbers again \n" BLACK);
     }
 }
 
 void OutputAnswers(enum CountOfSolves NumberOfRoots, double x1, double x2)
 {
     if(NumberOfRoots == One)
-        printf("\x1b[33m one root: %lg \x1b[30m", x1);
+        printf(YELLOW"one root: %lg" BLACK, x1);
     else if(NumberOfRoots == Two)
-        printf("\x1b[33m two roots: x1 = %lg x2 = %lg \x1b[30m", x1, x2);
+        printf(YELLOW" two roots: x1 = %lg x2 = %lg" BLACK, x1, x2);
     else if(NumberOfRoots == Zero)
-        printf("\x1b[33m no roots \x1b[30m");
+        printf(YELLOW" no roots" BLACK);
     else if(NumberOfRoots == Infinity)
-        printf("\x1b[33m infinity count of roots \x1b[30m");
+        printf(YELLOW" infinity count of roots" BLACK);
 }
 
 int ClearStdin()
 {
     int CountOfScanned = 1;
-    int ch;
+    int ch= '\n';
     while (true)
     {
         ch = getchar();

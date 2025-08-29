@@ -24,6 +24,6 @@ int main(int argc, char*argv[])
     }
     else
     {
-        printf("\x1b[31m g++.exe: error: unrecognized command line option '%s'\n use QES.exe --help if you don't know any other flags\n compilation terminated.\n \x1b[30m", argv[1]);
+        printf("RED g++.exe: error: unrecognized command line option '%s'\n use QES.exe --help if you don't know any other flags\n compilation terminated.\n BLACK", argv[1]);
     }
 }

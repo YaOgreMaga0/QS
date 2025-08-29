@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
-#include "../src_h/SolverTests.h"
 #include "../src_h/EquationSolutionFunctions.h"
+#include "../src_h/SolverTests.h"
 
 const int CountOfTests = 10;
 void SolverT();
@@ -31,7 +31,7 @@ void SolverT()
             int NumberOfRoots = SolveQuadraticEquation(a);
             if(NumberOfRoots != TestsSet[i].CountOfRoots)
             {
-                printf("\x1b[31m the number of roots in the test %d is not determined correctly \n \x1b[30m", i+1);
+                printf(RED "the number of roots in the test %d is not determined correctly \n" BLACK, i+1);
                 CountOfFailedTests++;
             }
             else
@@ -40,11 +40,11 @@ void SolverT()
                 {
                     if(fabsf((x1*x1*TestsSet[i].a + x1*TestsSet[i].b +TestsSet[i].c)- 0) >= EPS || fabsf((x2*x2*TestsSet[i].a + x2*TestsSet[i].b +TestsSet[i].c)- 0) >= EPS)
                     {
-                        printf("\x1b[31m large calculation error in the test number %d \n \x1b[30m", i+1);
+                        printf(RED "large calculation error in the test number %d \n" BLACK, i+1);
                         CountOfFailedTests++;
                     }
                 }
         }
     }
-    printf("%d / %d %s", CountOfTests - CountOfFailedTests, CountOfTests, "\x1b[32m tests passed successfully \x1b[30m");
+    printf(GREEN "%d / %d %s", CountOfTests - CountOfFailedTests, CountOfTests, "tests passed successfully" BLACK);
 }
