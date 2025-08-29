@@ -1,4 +1,3 @@
-#include <
 #ifndef EQUATION_SOLUTION_FUNCTIONS_H
 #define EQUATION_SOLUTION_FUNCTIONS_H
 
@@ -7,7 +6,8 @@ const double EPS = 0.000001;
 struct equation
 {
     double a, b, c;
-    double* x1, x2;
+    double* x1;
+    double* x2;
 };
 
 struct test
@@ -28,10 +28,8 @@ enum CountOfSolves
 
 enum CountOfSolves SolveQuadraticEquation(equation a);
 
-enum CountOfSolves linear_equation(struct a)
-enum CountOfSolves quadratic_equation(struct a)
-bool is_zero(int a)
+enum CountOfSolves linear_equation(equation a);
+enum CountOfSolves quadratic_equation(equation a);
+bool is_zero(int a);
 
-void UserI();
-void SolverT();
 #endif

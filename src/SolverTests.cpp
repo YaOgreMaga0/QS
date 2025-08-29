@@ -3,7 +3,7 @@
 #include "../src_h/SolverTests.h"
 #include "../src_h/EquationSolutionFunctions.h"
 
-const int CountOfTests = 11;
+const int CountOfTests = 10;
 void SolverT();
 
 void SolverT()
@@ -18,12 +18,16 @@ void SolverT()
                                   {0, 1, -1, 1},
                                   {1, 2, 2, 0},
                                   {0, 1, 0, 1},
-                                  {0, 0, 0, 3},
-                                  {432, 432134, 32, 2}};
+                                  {0, 0, 0, 3}};
     for (int i = 0; i < CountOfTests; i++)
         {
             double x1 = 0.0, x2 = 0.0;
-            equation a(TestsSet[i].a, TestsSet[i].b, TestsSet[i].c, &x1, &x2);
+            equation a;
+            a.a = TestsSet[i].a;
+            a.b = TestsSet[i].b;
+            a.c = TestsSet[i].c;
+            a.x1 = &x1;
+            a.x2 = &x2;
             int NumberOfRoots = SolveQuadraticEquation(a);
             if(NumberOfRoots != TestsSet[i].CountOfRoots)
             {

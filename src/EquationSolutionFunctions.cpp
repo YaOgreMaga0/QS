@@ -4,7 +4,13 @@
 //#include "MyASSerts.h"
 #include "../src_h/EquationSolutionFunctions.h"
 
-
+bool is_zero(double a)
+{
+    if(fabs(a-0.0) <= EPS)
+        return true;
+    else
+        return false;
+}
 
 enum CountOfSolves SolveQuadraticEquation(equation a)
 {
@@ -20,39 +26,32 @@ enum CountOfSolves SolveQuadraticEquation(equation a)
 }
 
 
-bool is_zero(double a)
-{
-    if(fabs(a-0.0) <= EPS)
-        return true;
-    else
-        return false;
-}
 
-enum linear_equation(struct a)
+enum CountOfSolves linear_equation(equation a)
 {
-    *a.x1 = *a.x2 = (-c)/b;
-    if(*a.x1 == NAN)
+    *(a.x1) = *(a.x2) = (-a.c)/a.b;
+    if(a.b==0)
         return Infinity;
     else
         return One;
 }
 
-enum quadratic_equation (struct a)
+enum CountOfSolves quadratic_equation (equation a)
 {
-    double d = b*b - 4*a*c;
-    if(d<0)
+    double d = a.b*a.b - 4*a.a*a.c;
+    if(d < 0)
         return Zero;
     else
     {
         if(is_zero(d))
         {
-            *x1 = *x2 = (-b)/(2*a);
+            *(a.x1) = *(a.x2) = (-a.b)/(2*a.a);
             return One;
         }
         else
         {
-            *x1 = (-b/2a) + sqrt(d);
-            *x2 = (-b/2a) - sqrt(d);
+            *(a.x1) = (-a.b + sqrt(d))/(2*a.a);
+            *(a.x2) = (-a.b - sqrt(d))/(2*a.a);
             return Two;
         }
     }

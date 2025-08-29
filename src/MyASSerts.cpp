@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define MyASSerts(bool a) ASS(const char *__func, const char *__FILE, int __LINE, bool condition)
+
 
 
 void ASS(const char *__func, const char *__FILE, int __LINE, bool condition)
