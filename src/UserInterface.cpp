@@ -11,18 +11,23 @@ int ClearStdin();
 
 void UserI()
 {
-    double a = 0, b = 0, c = 0;
-
     double x1 = 0;
     double x2 = 0;
 
+    equation a;
+    equation a.a = 0;
+    equation a.b = 0;
+    equation a.c = 0;
+    equation a.x1 = &x1;
+    equation a.x2 = &x2;
+
     printf("Enter the coefficients a, b, c separated by space:");
 
-    NumbersScanner(&a, &b, &c);
+    NumbersScanner(&a.a, &a.b, &a.c);
 
-    enum CountOfSolves NumberOfRoots = SolveQuadraticEquation(a, b, c, &x1, &x2);
+    enum CountOfSolves NumberOfRoots = SolveQuadraticEquation(a);
 
-    OutputAnswers(NumberOfRoots, x1, x2);
+    OutputAnswers(NumberOfRoots, *a.x1, *a.x2);
 }
 
 void NumbersScanner(double* a,double* b,double* c)
