@@ -1,6 +1,6 @@
 all: start
 
-start:obj/EquationSolutionFunctions.o obj/UserInterface.o obj/QuadraticEquationSolver.o obj/SolverTests.o obj/MyASSerts.o
+start: obj/EquationSolutionFunctions.o obj/UserInterface.o obj/QuadraticEquationSolver.o obj/SolverTests.o obj/MyASSerts.o
 	g++ obj/EquationSolutionFunctions.o obj/UserInterface.o obj/QuadraticEquationSolver.o obj/SolverTests.o obj/MyASSerts.o -o quadratka
 
 obj/EquationSolutionFunctions.o: src/EquationSolutionFunctions.cpp

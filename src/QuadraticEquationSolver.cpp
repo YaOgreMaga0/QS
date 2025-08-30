@@ -10,13 +10,13 @@ int main(int argc, char*argv[])
 {
     if(argc > 0)
     {
-        if(strncmp(argv[1], "--test", 6) == 0)
+        if(strcmp(argv[1], "--test") == 0)
             SolverT();
-        else if(strncmp(argv[1], "--user", 6) == 0)
+        else if(strcmp(argv[1], "--user") == 0)
             UserI();
-        else if(strncmp(argv[1], "--help", 6) == 0)
+        else if(strcmp(argv[1], "--help") == 0)
             printf("Usage: quadratka.exe [options] file...\n Options:\n --user                   Run user mode\n --test                   Run test mode\n --help                   Display this information\n");
-        else if(strncmp(argv[1], "--prank", 7) == 0)
+        else if(strcmp(argv[1], "--prank") == 0)
         {
             ShellExecuteA(GetDesktopWindow(),"open","musor\\RickRoll.mp4",NULL,NULL,SW_SHOW);
             Sleep(1000);
@@ -24,6 +24,6 @@ int main(int argc, char*argv[])
     }
     else
     {
-        printf("RED g++.exe: error: unrecognized command line option '%s'\n use QES.exe --help if you don't know any other flags\n compilation terminated.\n BLACK", argv[1]);
+        printf(RED "quadratka.exe: error: unrecognized command line option '%s'\n use QES.exe --help if you don't know any other flags\n compilation terminated.\n" BLACK, argv[1]);
     }
 }

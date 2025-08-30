@@ -14,14 +14,6 @@ struct equation
     double* x2;
 };
 
-struct test
-{
-    double a;
-    double b;
-    double c;
-    int CountOfRoots;
-};
-
 enum CountOfSolves
 {
     Zero,
